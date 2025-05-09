@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ticket Store</title>
+<style>
+        body { background: black; color: lime; font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
+        h1 { padding: 20px; }
+        .card {
+            border: 2px solid lime;
+            border-radius: 10px;
+            margin: 20px auto;
+            padding: 15px;
+            width: 90%;
+            max-width: 400px;
+            background: #111;
+            box-shadow: 0 0 10px lime;
+        }
+        img { width: 100%; border-radius: 8px; }
+        select, input, button {
+            margin: 10px 5px;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: lime;
+            padding-bottom: 20px;
+        }
+        .whatsapp-support {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Ticket Store</h1>
+<div class="card">
+<h2>Rock in Rio</h2>
+<img alt="Rock in Rio" src="imagens/imagem_1.jpeg"/>
+<p><strong>Local:</strong> Parque Olímpico, Rio de Janeiro - RJ<br/>
+<strong>Data:</strong> 13 a 22 de setembro de 2025<br/>
+<strong>Horário:</strong> A partir das 14h</p>
+<p><del>Inteira: R$795,00</del> | Agora: <strong>R$595,00</strong></p>
+<p><del>Meia: R$397,00</del> | Agora: <strong>R$197,00</strong></p>
+<label>Tipo:
+            <select id="tipo-Rock_in_Rio">
+<option value="Meia - R$197">Meia - R$197</option>
+<option value="Inteira - R$595">Inteira - R$595</option>
+</select>
+</label><br/>
+<label>Quantidade:
+            <button onclick="alterarQuantidade('Rock_in_Rio', -1)">–</button>
+<input id="quantidade-Rock_in_Rio" min="1" readonly="" style="width: 40px;" type="number" value="1"/>
+<button onclick="alterarQuantidade('Rock_in_Rio', 1)">+</button>
+</label><br/>
+<a href="#" onclick="enviarPedido('Rock in Rio', 'Rock_in_Rio')" style="color:lime; text-decoration:underline;">Comprar</a>
+</div>
+<div class="card">
+<h2>Tomorrowland</h2>
+<img alt="Tomorrowland" src="imagens/imagem_2.jpeg"/>
+<p><strong>Local:</strong> Parque Maeda, Itu - SP<br/>
+<strong>Data:</strong> 3 a 5 de outubro de 2025<br/>
+<strong>Horário:</strong> A partir das 12h</p>
+<p><del>Inteira: R$1160,00</del> | Agora: <strong>R$960,00</strong></p>
+<p><del>Meia: R$580,00</del> | Agora: <strong>R$380,00</strong></p>
+<label>Tipo:
+            <select id="tipo-Tomorrowland">
+<option value="Meia - R$380">Meia - R$380</option>
+<option value="Inteira - R$960">Inteira - R$960</option>
+</select>
+</label><br/>
+<label>Quantidade:
+            <button onclick="alterarQuantidade('Tomorrowland', -1)">–</button>
+<input id="quantidade-Tomorrowland" min="1" readonly="" style="width: 40px;" type="number" value="1"/>
+<button onclick="alterarQuantidade('Tomorrowland', 1)">+</button>
+</label><br/>
+<a href="#" onclick="enviarPedido('Tomorrowland', 'Tomorrowland')" style="color:lime; text-decoration:underline;">Comprar</a>
+</div>
+<div class="card">
+<h2>Lollapalooza</h2>
+<img alt="Lollapalooza" src="imagens/imagem_3.jpeg"/>
+<p><strong>Local:</strong> Autódromo de Interlagos, São Paulo - SP<br/>
+<strong>Data:</strong> 28 a 30 de março de 2025<br/>
+<strong>Horário:</strong> Portões abrem às 11h</p>
+<p><del>Inteira: R$2250,00</del> | Agora: <strong>R$2050,00</strong></p>
+<p><del>Meia: R$1125,00</del> | Agora: <strong>R$925,00</strong></p>
+<label>Tipo:
+            <select id="tipo-Lollapalooza">
+<option value="Meia - R$925">Meia - R$925</option>
+<option value="Inteira - R$2050">Inteira - R$2050</option>
+</select>
+</label><br/>
+<label>Quantidade:
+            <button onclick="alterarQuantidade('Lollapalooza', -1)">–</button>
+<input id="quantidade-Lollapalooza" min="1" readonly="" style="width: 40px;" type="number" value="1"/>
+<button onclick="alterarQuantidade('Lollapalooza', 1)">+</button>
+</label><br/>
+<a href="#" onclick="enviarPedido('Lollapalooza', 'Lollapalooza')" style="color:lime; text-decoration:underline;">Comprar</a>
+</div>
+<div class="card">
+<h2>Oasis</h2>
+<img alt="Oasis" src="imagens/imagem_4.jpeg"/>
+<p><strong>Local:</strong> Allianz Parque, São Paulo - SP<br/>
+<strong>Data:</strong> 17 de agosto de 2025<br/>
+<strong>Horário:</strong> Show às 21h</p>
+<p><del>Inteira: R$750,00</del> | Agora: <strong>R$550,00</strong></p>
+<p><del>Meia: R$375,00</del> | Agora: <strong>R$175,00</strong></p>
+<label>Tipo:
+            <select id="tipo-Oasis">
+<option value="Meia - R$175">Meia - R$175</option>
+<option value="Inteira - R$550">Inteira - R$550</option>
+</select>
+</label><br/>
+<label>Quantidade:
+            <button onclick="alterarQuantidade('Oasis', -1)">–</button>
+<input id="quantidade-Oasis" min="1" readonly="" style="width: 40px;" type="number" value="1"/>
+<button onclick="alterarQuantidade('Oasis', 1)">+</button>
+</label><br/>
+<a href="#" onclick="enviarPedido('Oasis', 'Oasis')" style="color:lime; text-decoration:underline;">Comprar</a>
+</div>
+<div class="footer">
+        Ticket Store desde 2017 vendendo emoção em forma de ingresso.
+    </div>
+<a class="whatsapp-support" href="https://wa.me/5511995429697" target="_blank">
+<img alt="WhatsApp" src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/>
+</a>
+<script>
+function alterarQuantidade(id, valor) {
+    const input = document.getElementById('quantidade-' + id);
+    let atual = parseInt(input.value);
+    if (atual + valor >= 1) {
+        input.value = atual + valor;
+    }
+}
+function enviarPedido(evento, id) {
+    const tipo = document.getElementById('tipo-' + id).value;
+    const quantidade = document.getElementById('quantidade-' + id).value;
+    const valor = tipo.split('R$')[1];
+    const total = parseInt(valor) * parseInt(quantidade);
+    const mensagem = `Olá, quero comprar ingresso para ${evento}%0AQuantidade: ${quantidade}%0ATipo: ${tipo}%0ATotal: R$${total},00`;
+    window.open(`https://wa.me/5511995429697?text=${mensagem}`, '_blank');
+}
+</script>
+<a href="https://www.facebook.com/share/1BhsRW9V58/" style="position: fixed; bottom: 80px; right: 20px; z-index: 1000;" target="_blank">
+</a>
+<div class="footer">
+<a href="https://www.facebook.com/herika.fernandes.2025?mibextid=ZbWKwL" style="color:lime; font-size: 24px; margin-right: 10px;" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+<p>© 2025 Ticket Store - Todos os direitos reservados</p>
+</div>
+</body>
+</html>
+<script>
+function comprar(evento, precoMeia, precoInteira) {
+    const tipo = document.getElementById('tipo-' + evento).value;
+    const qtd = parseInt(document.getElementById('qtd-' + evento).value);
+    const valor = tipo.includes("Meia") ? precoMeia * qtd : precoInteira * qtd;
+    const msg = `Olá, quero comprar ${qtd} ingresso(s) do tipo ${tipo} para ${evento}. Total: R$${valor}`;
+    const link = `https://wa.me/5511995429697?text=${encodeURIComponent(msg)}`;
+    window.open(link, "_blank");
+}
+</script>
